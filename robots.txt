@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://chaye146.github.io//github/sitemap.xml 
+Sitemap: http://chaye146.github.io/MyBlog/sitemap.xml 
