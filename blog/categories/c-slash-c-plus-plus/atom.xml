@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Tomorrow]]></title>
-  <link href="http://chaye146.github.io//github/atom.xml" rel="self"/>
+  <title><![CDATA[Category: C/c++ | Tomorrow]]></title>
+  <link href="http://chaye146.github.io//github/blog/categories/c-slash-c-plus-plus/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
   <updated>2014-10-19T03:01:11+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
@@ -148,22 +148,7 @@
 </div>
 </div>
 </div>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The First Post]]></title>
-    <link href="http://chaye146.github.io//github/blog/2014/10/18/the-first-post/"/>
-    <updated>2014-10-18T00:00:00+08:00</updated>
-    <id>http://chaye146.github.io//github/blog/2014/10/18/the-first-post</id>
-    <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">To Memorize the birth of my blog</h2>
-<div class="outline-text-2" id="text-unnumbered-1">
-<p>
-<!-- more -->
-</p>
-</div>
-</div>
+
 ]]></content>
   </entry>
   
