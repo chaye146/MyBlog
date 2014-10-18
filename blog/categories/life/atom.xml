@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Tomorrow]]></title>
-  <link href="http://chaye146.github.io//github/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Life | Tomorrow]]></title>
+  <link href="http://chaye146.github.io//github/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
   <updated>2014-10-18T18:10:58+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
@@ -26,6 +26,7 @@
 </p>
 </div>
 </div>
+
 ]]></content>
   </entry>
   
