@@ -4,7 +4,7 @@
   <title><![CDATA[Tomorrow]]></title>
   <link href="http://chaye146.github.io//github/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
-  <updated>2014-10-19T03:01:11+08:00</updated>
+  <updated>2014-10-19T19:51:17+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
   <author>
     <name><![CDATA[qypJack]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Learning Make]]></title>
+    <link href="http://chaye146.github.io//github/blog/2014/10/19/learning-make/"/>
+    <updated>2014-10-19T00:00:00+08:00</updated>
+    <id>http://chaye146.github.io//github/blog/2014/10/19/learning-make</id>
+    <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">OverView</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+</div><div id="outline-container-unnumbered-2" class="outline-3">
+<h3 id="unnumbered-2"><a href="#unnumbered-4">A simple makefile</a></h3>
+</div>
+
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3"><a href="#unnumbered-5">What makefiles contain</a></h3>
+<div class="outline-text-3" id="text-unnumbered-3">
+<p>
+<!-- more -->
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-4" class="outline-2">
+<h2 id="unnumbered-4">A simple makefile</h2>
+<div class="outline-text-2" id="text-unnumbered-4">
+<div class="org-src-container">
+
+<pre class="src src-makefile"><span style="color: #F92672; font-style: italic;">target ...</span> : prerequisites
+    recipe
+    ...
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-5" class="outline-2">
+<h2 id="unnumbered-5">What makefiles contain</h2>
+<div class="outline-text-2" id="text-unnumbered-5">
+</div><div id="outline-container-unnumbered-6" class="outline-3">
+<h3 id="unnumbered-6">Explicit rules</h3>
+</div>
+
+<div id="outline-container-unnumbered-7" class="outline-3">
+<h3 id="unnumbered-7">Implicit rules</h3>
+</div>
+
+<div id="outline-container-unnumbered-8" class="outline-3">
+<h3 id="unnumbered-8">Variable definition</h3>
+</div>
+
+<div id="outline-container-unnumbered-9" class="outline-3">
+<h3 id="unnumbered-9">Directive</h3>
+<div class="outline-text-3" id="text-unnumbered-9">
+<p>
+include filenames .. : Including another makefile, the first character of the line must not be a tab
+</p>
+
+<p>
+Deciding whether to use or ignore a part of the makefile
+</p>
+
+<p>
+Defining a variable from a verbatain string containing multiple lines
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-10" class="outline-3">
+<h3 id="unnumbered-10">Comments</h3>
+<div class="outline-text-3" id="text-unnumbered-10">
+<p>
+&#8217;#&#8217; in a makefile start a comment.
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-11" class="outline-3">
+<h3 id="unnumbered-11"><span class="todo TODO">TODO</span> </h3>
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Learning GCC Compilation]]></title>
