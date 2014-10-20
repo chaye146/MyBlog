@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Learning Make - Tomorrow</title>
+  <title>Binary Tree Traversal - Tomorrow</title>
   <meta name="author" content="qypJack">
 
   
-  <meta name="description" content="OverView A simple makefile What makefiles contain A simple makefile target ... : prerequisites recipe ... What makefiles contain Explicit rules &hellip;">
+  <meta name="description" content="Binary Tree Traversal Pre-order traversal In-order traversal Post-order traversal Pre-order traversal root-&gt;left-&gt;right void preorder(Node* &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chaye146.github.io//github/blog/2014/10/19/learning-make">
+  <link rel="canonical" href="http://chaye146.github.io//github/blog/2014/10/20/binary-tree-traversal">
   <link href="/MyBlog/favicon.png" rel="icon">
   <link href="/MyBlog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/github/atom.xml" rel="alternate" title="Tomorrow" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">Learning Make</h1>
+      <h1 class="entry-title">Binary Tree Traversal</h1>
     
     
       <p class="meta">
@@ -77,7 +77,7 @@
 
 
 
-<time class='entry-date' datetime='2014-10-19'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2014-10-20'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
         
       </p>
     
@@ -85,15 +85,19 @@
 
 
 <div class="entry-content"><div id="outline-container-unnumbered-1" class="outline-2">
-<h2 id="unnumbered-1">OverView</h2>
+<h2 id="unnumbered-1">Binary Tree Traversal</h2>
 <div class="outline-text-2" id="text-unnumbered-1">
 </div><div id="outline-container-unnumbered-2" class="outline-3">
-<h3 id="unnumbered-2"><a href="#unnumbered-4">A simple makefile</a></h3>
+<h3 id="unnumbered-2"><a href="#unnumbered-5">Pre-order traversal</a></h3>
 </div>
 
 <div id="outline-container-unnumbered-3" class="outline-3">
-<h3 id="unnumbered-3"><a href="#unnumbered-5">What makefiles contain</a></h3>
-<div class="outline-text-3" id="text-unnumbered-3">
+<h3 id="unnumbered-3"><a href="#unnumbered-6">In-order traversal</a></h3>
+</div>
+
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4"><a href="#unnumbered-7">Post-order traversal</a></h3>
+<div class="outline-text-3" id="text-unnumbered-4">
 <p>
 <!-- more -->
 </p>
@@ -101,62 +105,75 @@
 </div>
 </div>
 
-<div id="outline-container-unnumbered-4" class="outline-2">
-<h2 id="unnumbered-4">A simple makefile</h2>
-<div class="outline-text-2" id="text-unnumbered-4">
+<div id="outline-container-unnumbered-5" class="outline-2">
+<h2 id="unnumbered-5">Pre-order traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-5">
+<p>
+root-&gt;left-&gt;right
+</p>
 <div class="org-src-container">
 
-<pre class="src src-makefile"><span style="color: #F92672; font-style: italic;">target ...</span> : prerequisites
-    recipe
-    ...
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">preorder</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">root</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>root)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
+
+    visit(root);
+    preorder(root-&gt;left);
+    preorder(root-&gt;right);
+}
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-unnumbered-5" class="outline-2">
-<h2 id="unnumbered-5">What makefiles contain</h2>
-<div class="outline-text-2" id="text-unnumbered-5">
-</div><div id="outline-container-unnumbered-6" class="outline-3">
-<h3 id="unnumbered-6">Explicit rules</h3>
-</div>
-
-<div id="outline-container-unnumbered-7" class="outline-3">
-<h3 id="unnumbered-7">Implicit rules</h3>
-</div>
-
-<div id="outline-container-unnumbered-8" class="outline-3">
-<h3 id="unnumbered-8">Variable definition</h3>
-</div>
-
-<div id="outline-container-unnumbered-9" class="outline-3">
-<h3 id="unnumbered-9">Directive</h3>
-<div class="outline-text-3" id="text-unnumbered-9">
+<div id="outline-container-unnumbered-6" class="outline-2">
+<h2 id="unnumbered-6">In-order traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-6">
 <p>
-include filenames .. : Including another makefile, the first character of the line must not be a tab
+left-&gt;root-&gt;right;
 </p>
+<div class="org-src-container">
 
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">inorder</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">root</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>root)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
+
+    inorder(root-&gt;left);
+    visit(root);
+    inorder(root-&gt;right);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-7" class="outline-2">
+<h2 id="unnumbered-7">Post-order traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-7">
 <p>
-Deciding whether to use or ignore a part of the makefile
+right-&gt;left-&gt;root
 </p>
+<div class="org-src-container">
 
-<p>
-Defining a variable from a verbatain string containing multiple lines
-</p>
-</div>
-</div>
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">postorder</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">root</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>root)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
 
-<div id="outline-container-unnumbered-10" class="outline-3">
-<h3 id="unnumbered-10">Comments</h3>
-<div class="outline-text-3" id="text-unnumbered-10">
-<p>
-&#8217;#&#8217; in a makefile start a comment.
-</p>
+    postorder(root-&gt;right);
+    postorder(root-&gt;left);
+    visit(root);
+}
+</pre>
 </div>
-</div>
-
-<div id="outline-container-unnumbered-11" class="outline-3">
-<h3 id="unnumbered-11"><span class="todo TODO">TODO</span> this receipt didn&#8217;t finished yet</h3>
 </div>
 </div>
 </div>
@@ -174,8 +191,14 @@ Defining a variable from a verbatain string containing multiple lines
 
 
 
-<time class='entry-date' datetime='2014-10-19'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2014-10-20'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/MyBlog/blog/categories/c-slash-c-plus-plus/'>c/c++</a>
+  
+</span>
 
 
     </p>
@@ -189,10 +212,10 @@ Defining a variable from a verbatain string containing multiple lines
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/MyBlog/blog/2014/10/19/Learning-GCC-Compilation/" title="Previous Post: Learning GCC Compilation">&laquo; Learning GCC Compilation</a>
+        <a class="basic-alignment left" href="/MyBlog/blog/2014/10/19/learning-make/" title="Previous Post: Learning Make">&laquo; Learning Make</a>
       
       
-        <a class="basic-alignment right" href="/MyBlog/blog/2014/10/20/binary-tree-traversal/" title="Next Post: Binary tree traversal">Binary tree traversal &raquo;</a>
+        <a class="basic-alignment right" href="/MyBlog/blog/2014/10/20/data-structure/" title="Next Post: Data structure">Data structure &raquo;</a>
       
     </p>
   </footer>

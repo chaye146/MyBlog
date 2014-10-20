@@ -4,7 +4,7 @@
   <title><![CDATA[Tomorrow]]></title>
   <link href="http://chaye146.github.io//github/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
-  <updated>2014-10-19T19:51:17+08:00</updated>
+  <updated>2014-10-21T00:40:27+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
   <author>
     <name><![CDATA[qypJack]]></name>
@@ -12,6 +12,173 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Data Structure]]></title>
+    <link href="http://chaye146.github.io//github/blog/2014/10/20/data-structure/"/>
+    <updated>2014-10-20T00:00:00+08:00</updated>
+    <id>http://chaye146.github.io//github/blog/2014/10/20/data-structure</id>
+    <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Data structure</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+<!-- more -->
+</p>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2">List</h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">list for int</span>
+<span style="color: #66D9EF;">struct</span> <span style="color: #66D9EF;">Node</span>
+{
+    <span style="color: #66D9EF;">int</span> <span style="color: #F92672;">m_data</span>;
+    <span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">m_next</span>;
+};
+
+<span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">.h</span>
+TODO
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">.cpp</span>
+TODO
+</pre>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3">List Alogorithm</h3>
+<div class="outline-text-3" id="text-unnumbered-3">
+</div><div id="outline-container-unnumbered-4" class="outline-4">
+<h4 id="unnumbered-4">reverse a list</h4>
+<div class="outline-text-4" id="text-unnumbered-4">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">Node</span>* <span style="color: #F92672; font-style: italic;">reverse</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">pre</span>, <span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">next</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>next)
+    {
+        <span style="color: #66D9EF;">return</span> pre;
+    }
+
+    <span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">newhead</span> = reverse(next, next-&gt;next);
+    next-&gt;next = pre;
+    <span style="color: #66D9EF;">return</span> newhead;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Binary Tree Traversal]]></title>
+    <link href="http://chaye146.github.io//github/blog/2014/10/20/binary-tree-traversal/"/>
+    <updated>2014-10-20T00:00:00+08:00</updated>
+    <id>http://chaye146.github.io//github/blog/2014/10/20/binary-tree-traversal</id>
+    <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Binary Tree Traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+</div><div id="outline-container-unnumbered-2" class="outline-3">
+<h3 id="unnumbered-2"><a href="#unnumbered-5">Pre-order traversal</a></h3>
+</div>
+
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3"><a href="#unnumbered-6">In-order traversal</a></h3>
+</div>
+
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4"><a href="#unnumbered-7">Post-order traversal</a></h3>
+<div class="outline-text-3" id="text-unnumbered-4">
+<p>
+<!-- more -->
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-5" class="outline-2">
+<h2 id="unnumbered-5">Pre-order traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-5">
+<p>
+root-&gt;left-&gt;right
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">preorder</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">root</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>root)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
+
+    visit(root);
+    preorder(root-&gt;left);
+    preorder(root-&gt;right);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-6" class="outline-2">
+<h2 id="unnumbered-6">In-order traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-6">
+<p>
+left-&gt;root-&gt;right;
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">inorder</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">root</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>root)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
+
+    inorder(root-&gt;left);
+    visit(root);
+    inorder(root-&gt;right);
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-7" class="outline-2">
+<h2 id="unnumbered-7">Post-order traversal</h2>
+<div class="outline-text-2" id="text-unnumbered-7">
+<p>
+right-&gt;left-&gt;root
+</p>
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">postorder</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">root</span>)
+{
+    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>root)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
+
+    postorder(root-&gt;right);
+    postorder(root-&gt;left);
+    visit(root);
+}
+</pre>
+</div>
+</div>
+</div>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Learning Make]]></title>
@@ -90,7 +257,7 @@ Defining a variable from a verbatain string containing multiple lines
 </div>
 
 <div id="outline-container-unnumbered-11" class="outline-3">
-<h3 id="unnumbered-11"><span class="todo TODO">TODO</span> </h3>
+<h3 id="unnumbered-11"><span class="todo TODO">TODO</span> this receipt didn&#8217;t finished yet</h3>
 </div>
 </div>
 ]]></content>
