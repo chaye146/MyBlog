@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C/c++ | Tomorrow]]></title>
   <link href="http://chaye146.github.io//github/blog/categories/c-slash-c-plus-plus/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
-  <updated>2014-10-21T00:40:27+08:00</updated>
+  <updated>2014-10-21T01:37:34+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
   <author>
     <name><![CDATA[qypJack]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Sorting Algorithm]]></title>
+    <link href="http://chaye146.github.io//github/blog/2014/10/21/sorting-algorithm/"/>
+    <updated>2014-10-21T00:00:00+08:00</updated>
+    <id>http://chaye146.github.io//github/blog/2014/10/21/sorting-algorithm</id>
+    <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Sorting Algorithm</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+<!-- more -->
+</p>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2">Bubble Sort</h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">bubbleSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">len</span>)
+{
+    <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">i</span> = 0; i&lt;len-1; ++i) {
+        <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">j</span> = 1; j &lt; len; ++j) { <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">&#27599;&#20010;&#24490;&#29615;&#26368;&#22823;&#30340;&#37117;&#20250;&#21040;&#20302;&#20301;</span>
+            <span style="color: #66D9EF;">if</span> (ary[i] &lt; ary[j])
+            {
+                ary[i] = ary[i] ^ ary[j];
+                ary[j] = ary[i] ^ ary[j];
+                ary[i] = ary[i] ^ ary[j];
+            }
+        }
+
+    }
+
+}
+</pre>
+</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Data Structure]]></title>

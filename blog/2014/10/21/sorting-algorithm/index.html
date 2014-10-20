@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Programing - Tomorrow</title>
+  <title>Sorting Algorithm - Tomorrow</title>
   <meta name="author" content="qypJack">
 
   
-  <meta name="description" content="Category: programing">
+  <meta name="description" content="Sorting Algorithm Bubble Sort void bubbleSort(int* ary, unsigned len)
+{ for (unsigned i = 0; i&lt;len-1; ++i) { for (unsigned j = 1; j &lt; len; ++j &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chaye146.github.io//github/blog/categories/programing">
+  <link rel="canonical" href="http://chaye146.github.io//github/blog/2014/10/21/sorting-algorithm">
   <link href="/MyBlog/favicon.png" rel="icon">
   <link href="/MyBlog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/github/atom.xml" rel="alternate" title="Tomorrow" type="application/atom+xml">
@@ -64,35 +65,100 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Programing</h1>
+    
+      <h1 class="entry-title">Sorting Algorithm</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-10-21'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
-
-  
-  <h2>2014</h2>
-
-<article>
-  
-<h1><a href="/MyBlog/blog/2014/10/18/the-first-post/">The First Post</a></h1>
-<time datetime="2014-10-18T00:00:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>18</span> <span class='year'>2014</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/MyBlog/blog/categories/life/'>life</a>, <a class='category' href='/MyBlog/blog/categories/programing/'>programing</a></span>
-</footer>
-
-
-</article>
-
+<div class="entry-content"><div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Sorting Algorithm</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+<!-- more -->
+</p>
+</div>
 </div>
 
+<div id="outline-container-unnumbered-2" class="outline-2">
+<h2 id="unnumbered-2">Bubble Sort</h2>
+<div class="outline-text-2" id="text-unnumbered-2">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">bubbleSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">len</span>)
+{
+    <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">i</span> = 0; i&lt;len-1; ++i) {
+        <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">j</span> = 1; j &lt; len; ++j) { <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">&#27599;&#20010;&#24490;&#29615;&#26368;&#22823;&#30340;&#37117;&#20250;&#21040;&#20302;&#20301;</span>
+            <span style="color: #66D9EF;">if</span> (ary[i] &lt; ary[j])
+            {
+                ary[i] = ary[i] ^ ary[j];
+                ary[j] = ary[i] ^ ary[j];
+                ary[i] = ary[i] ^ ary[j];
+            }
+        }
+
+    }
+
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">qypJack</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-10-21'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/MyBlog/blog/categories/c-slash-c-plus-plus/'>c/c++</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/MyBlog/blog/2014/10/20/data-structure/" title="Previous Post: Data structure">&laquo; Data structure</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
