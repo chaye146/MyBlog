@@ -9,8 +9,8 @@
   <meta name="author" content="qypJack">
 
   
-  <meta name="description" content="Sorting Algorithm Bubble Sort void bubbleSort(int* ary, unsigned len)
-{ for (unsigned i = 0; i&lt;len-1; ++i) { for (unsigned j = 1; j &lt; len; ++j &hellip;">
+  <meta name="description" content="Sorting Algorithm Insertion Sort Implementation void InsertionSort(int* ary, size_t len)
+{ if (len &lt; 2) return; for (size_t i = 1; i &lt; len; ++ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,28 +93,266 @@
 </p>
 </div>
 </div>
-
 <div id="outline-container-unnumbered-2" class="outline-2">
-<h2 id="unnumbered-2">Bubble Sort</h2>
+<h2 id="unnumbered-2">Insertion Sort</h2>
 <div class="outline-text-2" id="text-unnumbered-2">
+</div><div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3">Implementation</h3>
+<div class="outline-text-3" id="text-unnumbered-3">
 <div class="org-src-container">
 
-<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">bubbleSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">len</span>)
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">InsertionSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">len</span>)
 {
-    <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">i</span> = 0; i&lt;len-1; ++i) {
-        <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">unsigned</span> <span style="color: #F92672;">j</span> = 1; j &lt; len; ++j) { <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">&#27599;&#20010;&#24490;&#29615;&#26368;&#22823;&#30340;&#37117;&#20250;&#21040;&#20302;&#20301;</span>
-            <span style="color: #66D9EF;">if</span> (ary[i] &lt; ary[j])
-            {
-                ary[i] = ary[i] ^ ary[j];
-                ary[j] = ary[i] ^ ary[j];
-                ary[i] = ary[i] ^ ary[j];
-            }
-        }
+    <span style="color: #66D9EF;">if</span> (len &lt; 2)
+        <span style="color: #66D9EF;">return</span>;
 
+    <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">i</span> = 1; i &lt; len; ++i) <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">travel the unsorted list</span>
+    {
+        <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">j</span> = i;
+        <span style="color: #66D9EF;">int</span> <span style="color: #F92672;">tmp</span> = ary[j];<span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">auxilary space, store the value to be inserted to the sorted array </span>
+        <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">the best case only compare with the right most element of the sorted array</span>
+        <span style="color: #66D9EF;">while</span> (j &gt; 0 &amp;&amp; ary[j - 1] &gt; tmp) <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">worse case comparisons, 1 + 2 + 3 + ... + len - 1 = len*(len-1) / 2 = O(n^2)</span>
+        {
+            <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">find the suitable place to insert</span>
+            ary[j] = ary[j - 1]; <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">also worse case swaps : O(n^2)</span>
+            --j;
+        }
+        ary[j] = tmp; <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">insert the value to selected index;</span>
     }
 
 }
 </pre>
+</div>
+</div>
+</div>
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4">Performance</h3>
+<div class="outline-text-3" id="text-unnumbered-4">
+<p>
+stable
+</p>
+
+<p>
+worse : O(n^2) comparisons, swaps
+</p>
+
+<p>
+best  : O(n) comparisons, O(1)swaps
+</p>
+
+<p>
+space complexity : O(n) total, O(1) auxilary
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-5" class="outline-2">
+<h2 id="unnumbered-5">Selection Sort</h2>
+<div class="outline-text-2" id="text-unnumbered-5">
+</div><div id="outline-container-unnumbered-6" class="outline-3">
+<h3 id="unnumbered-6">Implementation</h3>
+<div class="outline-text-3" id="text-unnumbered-6">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">SelectionSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">len</span>)
+{
+    <span style="color: #66D9EF;">if</span> (len &lt; 2)
+        <span style="color: #66D9EF;">return</span>;
+
+    <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">i</span> = 0; i &lt; len - 1; ++i)
+    {
+        <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">minIndex</span> = i; <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">auxiliary space, recored the minimum index</span>
+        <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">j</span> = i+1; j &lt; len; ++j)  <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">travel the rest unsorted list every time. find the minimum value index</span>
+        {
+            <span style="color: #66D9EF;">if</span> (ary[minIndex] &gt; ary[j]) <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">worse case comparisons : (n-1) + (n-2) + ... + 1 = n(n-1) / 2 = O(n^2)</span>
+            {
+                minIndex = j;
+            }
+        }
+
+        <span style="color: #66D9EF;">if</span> (minIndex != i) <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">worse case swaps : n</span>
+        {
+            <span style="color: #66D9EF;">int</span> <span style="color: #F92672;">tmp</span> = ary[minIndex];
+            ary[minIndex] = ary[i];
+            ary[i] = tmp;
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-unnumbered-7" class="outline-3">
+<h3 id="unnumbered-7">Performance</h3>
+<div class="outline-text-3" id="text-unnumbered-7">
+<p>
+stable
+</p>
+
+<p>
+worse : O(n^2) comparisons, O(n) swaps
+</p>
+
+<p>
+best : O(n^2) comparisons, 0 swaps
+</p>
+
+<p>
+space complexity : O(n) total, O(1) auxiliary
+</p>
+
+<p>
+used when the swap operation take place much expensive than the compare operation.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-unnumbered-8" class="outline-2">
+<h2 id="unnumbered-8">Quick Sort</h2>
+<div class="outline-text-2" id="text-unnumbered-8">
+<p>
+Quick Sort is a Divide And Conquer algorithm
+</p>
+</div>
+<div id="outline-container-unnumbered-9" class="outline-3">
+<h3 id="unnumbered-9">Implementation</h3>
+<div class="outline-text-3" id="text-unnumbered-9">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">quickSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">len</span>)
+{
+    <span style="color: #66D9EF;">if</span> (len &lt; 2)
+    {
+        <span style="color: #66D9EF;">return</span>;
+    }
+    <span style="color: #66D9EF;">int</span> <span style="color: #F92672;">pivot</span> = ary[0]; <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">select a pivot</span>
+    <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">minIndex</span> = 0; <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">initialize the minIndex to be the pivot index</span>
+    <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">maxIndex</span> = len -1;
+    <span style="color: #66D9EF;">while</span> (maxIndex &gt; minIndex)
+    {
+        <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">reverse searching the value less than pivot, and copy the value to the minIndex which initialize to be the pivot index</span>
+        <span style="color: #66D9EF;">for</span> (; maxIndex &gt; minIndex; --maxIndex)
+        {
+            <span style="color: #66D9EF;">if</span> (ary[maxIndex] &lt; pivot)
+            {
+                ary[minIndex++] = ary[maxIndex];
+                <span style="color: #66D9EF;">break</span>;
+            }
+        }
+
+        <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">searching the value greater than pivot, and copy to maxIndex</span>
+        <span style="color: #66D9EF;">for</span> (; minIndex &lt; maxIndex; ++minIndex)
+        {
+            <span style="color: #66D9EF;">if</span> (ary[minIndex] &gt; pivot)
+            {
+                ary[maxIndex--] = ary[minIndex];
+                <span style="color: #66D9EF;">break</span>;
+            }
+        }
+    }
+    ary[minIndex] = pivot;
+    quickSort(ary, minIndex);
+    quickSort(ary + minIndex + 1, len - minIndex - 1);
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-unnumbered-10" class="outline-3">
+<h3 id="unnumbered-10">Performance</h3>
+<div class="outline-text-3" id="text-unnumbered-10">
+<p>
+unstable
+</p>
+
+<p>
+worse : O(n^2)
+</p>
+
+<p>
+Best : O(n log n)
+</p>
+
+<p>
+space complexity : O(n) total, O(log n) auxiliary
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-unnumbered-11" class="outline-2">
+<h2 id="unnumbered-11">Bubble Sort</h2>
+<div class="outline-text-2" id="text-unnumbered-11">
+</div><div id="outline-container-unnumbered-12" class="outline-3">
+<h3 id="unnumbered-12">Implementation</h3>
+<div class="outline-text-3" id="text-unnumbered-12">
+<div class="org-src-container">
+
+<pre class="src src-c++"><span style="color: #66D9EF;">void</span> <span style="color: #F92672; font-style: italic;">bubbleSort</span>(<span style="color: #66D9EF;">int</span>* <span style="color: #F92672;">ary</span>, <span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">len</span>)
+{
+    <span style="color: #66D9EF;">bool</span> <span style="color: #F92672;">isSwap</span> = <span style="color: #AE81FF;">true</span>;
+    <span style="color: #66D9EF;">while</span> (isSwap)
+    {
+        isSwap = <span style="color: #AE81FF;">false</span>;
+        <span style="color: #66D9EF;">for</span> (<span style="color: #66D9EF;">size_t</span> <span style="color: #F92672;">i</span> = 0; i &lt; len - 1; ++i) <span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">every traversal find the biggest number from the rest unsorted list to the last unsorted index;</span>
+        {
+            <span style="color: #66D9EF;">if</span> (ary[i] &gt; ary[i+1])
+            {
+                <span style="color: #66D9EF;">int</span> <span style="color: #F92672;">tmp</span> = ary[i];
+                ary[i] = ary[i+1];
+                ary[i+1] = tmp;
+                isSwap = <span style="color: #AE81FF;">true</span>;
+            }
+        }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-unnumbered-13" class="outline-3">
+<h3 id="unnumbered-13">Performance</h3>
+<div class="outline-text-3" id="text-unnumbered-13">
+<p>
+stable
+</p>
+
+<p>
+Worse : O(n^2)
+</p>
+
+<p>
+Best : O(n)
+</p>
+
+<p>
+space complexity : O(n) total, O(1) auxiliary
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-14" class="outline-2">
+<h2 id="unnumbered-14">Shell Sort</h2>
+<div class="outline-text-2" id="text-unnumbered-14">
+</div><div id="outline-container-unnumbered-15" class="outline-3">
+<h3 id="unnumbered-15">Implementation</h3>
+</div>
+
+<div id="outline-container-unnumbered-16" class="outline-3">
+<h3 id="unnumbered-16">Performance</h3>
+<div class="outline-text-3" id="text-unnumbered-16">
+<p>
+Worse : O(n^2)
+</p>
+
+<p>
+Best : O(n log n)
+</p>
+
+<p>
+space complexity : O(n) total, O(1) auxiliary
+</p>
 </div>
 </div>
 </div>
