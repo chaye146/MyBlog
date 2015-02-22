@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C/c++ | Tomorrow]]></title>
   <link href="http://chaye146.github.io//github/blog/categories/c-slash-c-plus-plus/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
-  <updated>2014-11-06T21:57:57+08:00</updated>
+  <updated>2015-02-23T00:50:56+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
   <author>
     <name><![CDATA[qypJack]]></name>
@@ -325,6 +325,24 @@ space complexity : O(n) total, O(1) auxiliary
 <div id="outline-container-unnumbered-2" class="outline-2">
 <h2 id="unnumbered-2">List</h2>
 <div class="outline-text-2" id="text-unnumbered-2">
+</div><div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3">Operations</h3>
+<div class="outline-text-3" id="text-unnumbered-3">
+<p>
+Implementation of a list data structure may proide some of the following operation :
+</p>
+<ul class="org-ul">
+<li>a constructor for create an empty list
+</li>
+<li>an operation for testing whether or not a list is empty
+</li>
+<li>an operation for appending an entity to a list
+</li>
+<li>an operation for determinning the first component of a list(&#8220;head&#8221;)
+</li>
+<li>an operation for referring to the list consisting of all the components of a list except for its first (&#8220;tail&#8221;)
+</li>
+</ul>
 <div class="org-src-container">
 
 <pre class="src src-c++"><span style="color: #465457; font-style: italic;">// </span><span style="color: #465457; font-style: italic;">list for int</span>
@@ -346,24 +364,26 @@ TODO
 </pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-unnumbered-3" class="outline-3">
-<h3 id="unnumbered-3">List Alogorithm</h3>
-<div class="outline-text-3" id="text-unnumbered-3">
-</div><div id="outline-container-unnumbered-4" class="outline-4">
-<h4 id="unnumbered-4">reverse a list</h4>
-<div class="outline-text-4" id="text-unnumbered-4">
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4">List Alogorithm</h3>
+<div class="outline-text-3" id="text-unnumbered-4">
+</div><div id="outline-container-unnumbered-5" class="outline-4">
+<h4 id="unnumbered-5">reverse a list</h4>
+<div class="outline-text-4" id="text-unnumbered-5">
 <div class="org-src-container">
 
 <pre class="src src-c++"><span style="color: #66D9EF;">Node</span>* <span style="color: #F92672; font-style: italic;">reverse</span>(<span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">pre</span>, <span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">next</span>)
 {
-    <span style="color: #66D9EF;">if</span> (<span style="font-weight: bold;">!</span>next)
+    <span style="color: #66D9EF;">if</span> (pre == 0 || next == 0)
     {
         <span style="color: #66D9EF;">return</span> pre;
     }
 
-    <span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">newhead</span> = reverse(next, next-&gt;next);
-    next-&gt;next = pre;
+    <span style="color: #66D9EF;">Node</span>* <span style="color: #F92672;">newhead</span> = reverse(next, next-&gt;m_next);
+    next-&gt;m_next = pre;
+    pre-&gt;m_next = 0;
     <span style="color: #66D9EF;">return</span> newhead;
 }
 </pre>

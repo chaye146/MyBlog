@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Linux Basic - Tomorrow</title>
+  <meta name="author" content="qypJack">
+
+  
+  <meta name="description" content="Linux Kernel System memory management Current virtual memory info : cat /proc/meminfo Current shared memory pages : ipcs -m Software program &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://chaye146.github.io//github/blog/2014/11/14/linux-basic">
+  <link href="/MyBlog/favicon.png" rel="icon">
+  <link href="/MyBlog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/github/atom.xml" rel="alternate" title="Tomorrow" type="application/atom+xml">
+  <script src="/MyBlog/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/MyBlog/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/MyBlog/">Tomorrow</a></h1>
+  
+    <h2>life&#8217;s not like this.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/github/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:chaye146.github.io//github" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/MyBlog/">Blog</a></li>
+  <li><a href="/MyBlog/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Linux Basic</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-11-14'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+<!-- more -->
+</p>
+<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Linux Kernel</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+</div><div id="outline-container-unnumbered-2" class="outline-3">
+<h3 id="unnumbered-2">System memory management</h3>
+<div class="outline-text-3" id="text-unnumbered-2">
+<p>
+Current virtual memory info : cat /proc/meminfo
+</p>
+
+<p>
+Current shared memory pages : ipcs -m
+</p>
+</div>
+</div>
+<div id="outline-container-unnumbered-3" class="outline-3">
+<h3 id="unnumbered-3">Software program management</h3>
+<div class="outline-text-3" id="text-unnumbered-3">
+<p>
+Current running Process : ps -ax
+</p>
+</div>
+</div>
+<div id="outline-container-unnumbered-4" class="outline-3">
+<h3 id="unnumbered-4">Hardware management</h3>
+<div class="outline-text-3" id="text-unnumbered-4">
+<p>
+Linux System identifies hardware device as special file, called device files. 
+</p>
+
+<p>
+Linux System creates special files, call nodes, for each device.
+</p>
+
+<p>
+three classifications of device files : character, block, network
+</p>
+<ul class="org-ul">
+<li>character device file
+</li>
+</ul>
+<p>
+handle data one character at a time. such as modems and terminals.
+</p>
+<ul class="org-ul">
+<li>block
+</li>
+</ul>
+<p>
+handle data in large blocks at a time. such as disk devices.
+</p>
+<ul class="org-ul">
+<li>network
+</li>
+</ul>
+<p>
+for devices that uses packets to send and receive data.
+</p>
+</div>
+</div>
+<div id="outline-container-unnumbered-5" class="outline-3">
+<h3 id="unnumbered-5">Filesystem management</h3>
+</div>
+</div>
+<div id="outline-container-unnumbered-6" class="outline-2">
+<h2 id="unnumbered-6">Linux Console</h2>
+<div class="outline-text-2" id="text-unnumbered-6">
+<p>
+linux system creates seven virtual consoles automatically , hold down Ctrl+Alt+(F1~F8) switch between consoles.
+</p>
+
+<p>
+there are two environment variables that control the format of the command line prompt.
+</p>
+
+<p>
+PS1 : control the default command line prompt format. 
+</p>
+
+<p>
+PS2 : control the second tired command line prompt format.
+</p>
+
+<p>
+The special characters can be used in the prompt string
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Character</th>
+<th scope="col" class="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\a</td>
+<td class="left">The bell character</td>
+</tr>
+
+<tr>
+<td class="left">\d</td>
+<td class="left">The date in the format &#8220;Day Month Date&#8221;</td>
+</tr>
+
+<tr>
+<td class="left">\e</td>
+<td class="left">The ASCII escape chareacter</td>
+</tr>
+
+<tr>
+<td class="left">\h</td>
+<td class="left">The local host name</td>
+</tr>
+
+<tr>
+<td class="left">\H</td>
+<td class="left">The fully qualified domin host name</td>
+</tr>
+
+<tr>
+<td class="left">\j</td>
+<td class="left">The number of jobs currently manage by the shell</td>
+</tr>
+
+<tr>
+<td class="left">\l</td>
+<td class="left">The basename of the shell&#8217;s terminal device name</td>
+</tr>
+
+<tr>
+<td class="left">\n</td>
+<td class="left">The ASCII new line character</td>
+</tr>
+
+<tr>
+<td class="left">\r</td>
+<td class="left">The ASCII carriage return</td>
+</tr>
+
+<tr>
+<td class="left">&sect;</td>
+<td class="left">The name of the shell</td>
+</tr>
+
+<tr>
+<td class="left">\t</td>
+<td class="left">The current time in 24-hour HH:MM:SS format</td>
+</tr>
+
+<tr>
+<td class="left">\T</td>
+<td class="left">The current time in 12-hour HH:MM:SS format</td>
+</tr>
+
+<tr>
+<td class="left">\u</td>
+<td class="left">The username of the current user</td>
+</tr>
+
+<tr>
+<td class="left">\w</td>
+<td class="left">The current working directory</td>
+</tr>
+
+<tr>
+<td class="left">\W</td>
+<td class="left">The basename of current working directory</td>
+</tr>
+
+<tr>
+<td class="left">\!</td>
+<td class="left">The bash shell history number of this command</td>
+</tr>
+
+<tr>
+<td class="left">\#</td>
+<td class="left">The command number of this command</td>
+</tr>
+
+<tr>
+<td class="left">\$</td>
+<td class="left">A dollar sign if a normal user, or a pound sign if the root user</td>
+</tr>
+
+<tr>
+<td class="left">\nnn</td>
+<td class="left">The character corresponding to the octal value nnn</td>
+</tr>
+
+<tr>
+<td class="left">&#92;</td>
+<td class="left">A backslash</td>
+</tr>
+
+<tr>
+<td class="left">\[</td>
+<td class="left">Begin a control code sequence</td>
+</tr>
+
+<tr>
+<td class="left">\]</td>
+<td class="left">End a control code sequence</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-7" class="outline-2">
+<h2 id="unnumbered-7">System administration</h2>
+<div class="outline-text-2" id="text-unnumbered-7">
+</div><div id="outline-container-unnumbered-8" class="outline-3">
+<h3 id="unnumbered-8">Managing users, groups and permissions</h3>
+<div class="outline-text-3" id="text-unnumbered-8">
+<p>
+first time login. change the root password : sudo passwd
+</p>
+
+<ul class="org-ul">
+<li>passwd file
+</li>
+</ul>
+<p>
+every account on the system has an entry in the file /etc/passwd
+</p>
+
+<p>
+each entry format :  username:password:uid:gid:gecos:homedir:shell
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-unnumbered-9" class="outline-2">
+<h2 id="unnumbered-9">Handling files</h2>
+</div>
+<div id="outline-container-unnumbered-10" class="outline-2">
+<h2 id="unnumbered-10">manipulating text</h2>
+</div>
+<div id="outline-container-unnumbered-11" class="outline-2">
+<h2 id="unnumbered-11">managing process</h2>
+</div>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">qypJack</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-11-14'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/MyBlog/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/MyBlog/blog/2014/10/31/c++-basic/" title="Previous Post: C++ Basic">&laquo; C++ Basic</a>
+      
+      
+        <a class="basic-alignment right" href="/MyBlog/blog/2015/02/23/emacs-daily/" title="Next Post: Emacs Daily">Emacs Daily &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/MyBlog/blog/2015/02/23/emacs-daily/">Emacs Daily</a>
+      </li>
+    
+      <li class="post">
+        <a href="/MyBlog/blog/2014/11/14/linux-basic/">Linux Basic</a>
+      </li>
+    
+      <li class="post">
+        <a href="/MyBlog/blog/2014/10/31/c++-basic/">C++ Basic</a>
+      </li>
+    
+      <li class="post">
+        <a href="/MyBlog/blog/2014/10/21/sorting-algorithm/">Sorting Algorithm</a>
+      </li>
+    
+      <li class="post">
+        <a href="/MyBlog/blog/2014/10/20/data-structure/">Data Structure</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - qypJack -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Emacs | Tomorrow]]></title>
+  <link href="http://chaye146.github.io//github/blog/categories/emacs/atom.xml" rel="self"/>
+  <link href="http://chaye146.github.io//github/"/>
+  <updated>2015-02-23T00:50:56+08:00</updated>
+  <id>http://chaye146.github.io//github/</id>
+  <author>
+    <name><![CDATA[qypJack]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Emacs Daily]]></title>
+    <link href="http://chaye146.github.io//github/blog/2015/02/23/emacs-daily/"/>
+    <updated>2015-02-23T00:00:00+08:00</updated>
+    <id>http://chaye146.github.io//github/blog/2015/02/23/emacs-daily</id>
+    <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
+<h2 id="unnumbered-1">Learn an command every day</h2>
+<div class="outline-text-2" id="text-unnumbered-1">
+<p>
+<!-- more -->
+</p>
+</div>
+
+<div id="outline-container-unnumbered-2" class="outline-3">
+<h3 id="unnumbered-2">evil-nerd-commanter</h3>
+<div class="outline-text-3" id="text-unnumbered-2">
+<p>
+M-;  M-n M-;
+</p>
+</div>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>
