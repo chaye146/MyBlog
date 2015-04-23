@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>C++ 虚函数表指针 - Tomorrow</title>
+  <title>C++ V-table - Tomorrow</title>
   <meta name="author" content="qypJack">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://chaye146.github.io//github/blog/2015/04/24/c++-%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E6%8C%87%E9%92%88">
+  <link rel="canonical" href="http://chaye146.github.io//github/blog/2015/04/24/c++-v-table">
   <link href="/MyBlog/favicon.png" rel="icon">
   <link href="/MyBlog/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/github/atom.xml" rel="alternate" title="Tomorrow" type="application/atom+xml">
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">C++ 虚函数表指针</h1>
+      <h1 class="entry-title">C++ V-table</h1>
     
     
       <p class="meta">
@@ -90,7 +90,12 @@
 <p>
 <!-- more -->
 记得在某次的面试中，被问到c++的虚函数指针是在这个类分配到的内存的哪个位置，这个问题就算是乱猜也有50%的机会。 因为作为一个类里面特殊的东西，没可能随机的参杂在定义的成员变量当中，这样编译器为了找这个虚指针也太累了，所以要么就是在最前，要么就是在最后。 面试，基本就是没什么仔细思考的时间，我就答了在最前。 原因嘛，直觉+少量逻辑，最简单的原因找起来容易，一个类的大小并不是固定的，要是放最後面，当程序运行时首先就要知道这个类的大小才能定位到这个虚指针，想想都累，何不放在最前，简单明了。 当然， 在当时被问到原因的时候，我也没有把这个简单暴力的答案说出来(其实现在想想就是我这么简单暴力的答也不算是完全错误)，而是吱吱唔唔的不知到给了个什么答案了。而今晚突然想起，思考了一下这个问题。 其实问题的答案很简单， 原因就是upcast. 正如前面说的， 要是放后面， 首先你得知道类的大小，而C++恰恰是动态类型语言，在编译时你根本没办法知道类型的正确大小。 父类指针引用子类对象的时候，要是虚表指针在末尾就再也找不回了。因此虚表指针存在于类的开头，不是省事，而是唯一的选择。
-对于这个前面问题，让我想到了另外的内存对齐问题，但时间问题还是留到下次再说.
+</p>
+
+<p>
+附更详细讨论 :
+<a href="http://coolshell.cn/articles/9543.html">http://coolshell.cn/articles/9543.html</a>
+<a href="http://blog.csdn.net/haoel/article/details/1948051">http://blog.csdn.net/haoel/article/details/1948051</a>
 </p>
 </div>
 </div>
@@ -147,7 +152,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/MyBlog/blog/2015/04/24/c++-%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E6%8C%87%E9%92%88/">C++ 虚函数表指针</a>
+        <a href="/MyBlog/blog/2015/04/24/c++-v-table/">C++ V-table</a>
       </li>
     
       <li class="post">

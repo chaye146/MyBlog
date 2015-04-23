@@ -4,7 +4,7 @@
   <title><![CDATA[Category: C++ | Tomorrow]]></title>
   <link href="http://chaye146.github.io//github/blog/categories/c-plus-plus/atom.xml" rel="self"/>
   <link href="http://chaye146.github.io//github/"/>
-  <updated>2015-04-24T00:33:11+08:00</updated>
+  <updated>2015-04-24T00:53:25+08:00</updated>
   <id>http://chaye146.github.io//github/</id>
   <author>
     <name><![CDATA[qypJack]]></name>
@@ -14,17 +14,22 @@
 
   
   <entry>
-    <title type="html"><![CDATA[C++ 虚函数表指针]]></title>
-    <link href="http://chaye146.github.io//github/blog/2015/04/24/c++-%E8%99%9A%E5%87%BD%E6%95%B0%E8%A1%A8%E6%8C%87%E9%92%88/"/>
+    <title type="html"><![CDATA[C++ V-table]]></title>
+    <link href="http://chaye146.github.io//github/blog/2015/04/24/c++-v-table/"/>
     <updated>2015-04-24T00:00:00+08:00</updated>
-    <id>http://chaye146.github.io//github/blog/2015/04/24/c++-虚函数表指针</id>
+    <id>http://chaye146.github.io//github/blog/2015/04/24/c++-v-table</id>
     <content type="html"><![CDATA[<div id="outline-container-unnumbered-1" class="outline-2">
 <h2 id="unnumbered-1">细节里的魔鬼</h2>
 <div class="outline-text-2" id="text-unnumbered-1">
 <p>
 <!-- more -->
 记得在某次的面试中，被问到c++的虚函数指针是在这个类分配到的内存的哪个位置，这个问题就算是乱猜也有50%的机会。 因为作为一个类里面特殊的东西，没可能随机的参杂在定义的成员变量当中，这样编译器为了找这个虚指针也太累了，所以要么就是在最前，要么就是在最后。 面试，基本就是没什么仔细思考的时间，我就答了在最前。 原因嘛，直觉+少量逻辑，最简单的原因找起来容易，一个类的大小并不是固定的，要是放最後面，当程序运行时首先就要知道这个类的大小才能定位到这个虚指针，想想都累，何不放在最前，简单明了。 当然， 在当时被问到原因的时候，我也没有把这个简单暴力的答案说出来(其实现在想想就是我这么简单暴力的答也不算是完全错误)，而是吱吱唔唔的不知到给了个什么答案了。而今晚突然想起，思考了一下这个问题。 其实问题的答案很简单， 原因就是upcast. 正如前面说的， 要是放后面， 首先你得知道类的大小，而C++恰恰是动态类型语言，在编译时你根本没办法知道类型的正确大小。 父类指针引用子类对象的时候，要是虚表指针在末尾就再也找不回了。因此虚表指针存在于类的开头，不是省事，而是唯一的选择。
-对于这个前面问题，让我想到了另外的内存对齐问题，但时间问题还是留到下次再说.
+</p>
+
+<p>
+附更详细讨论 :
+<a href="http://coolshell.cn/articles/9543.html">http://coolshell.cn/articles/9543.html</a>
+<a href="http://blog.csdn.net/haoel/article/details/1948051">http://blog.csdn.net/haoel/article/details/1948051</a>
 </p>
 </div>
 </div>
